@@ -24,7 +24,8 @@ const TabRoutes = (props) => {
                 headerShown: false,
                 style: styles.customBottomtabsStyle,
                 tabBarActiveTintColor: color.black,
-                
+                tabBarShowLabel:false,
+                tabBarStyle:{backgroundColor:color.theme}
                 
             }}
 
@@ -37,7 +38,7 @@ const TabRoutes = (props) => {
                     tabBarIcon: ({ focused }) => {
                         return (
                           
-                                <Image source={imagePath.homeIcon}  style={styles.icon}/>
+                                <Image source={imagePath.homeIcon}  style={[styles.icon,{tintColor:focused? "red":"grey"}]}/>
                                 
                         );
                     },
@@ -53,7 +54,7 @@ const TabRoutes = (props) => {
                     tabBarIcon: ({ focused }) => {
                         return (
                         
-                                <Image source={imagePath.searchIcon}  style={styles.icon}/>
+                                <Image source={imagePath.searchIcon}  style={[styles.icon,{tintColor:focused? "red":"grey"}]}/>
                                
                         );
                     },
@@ -68,7 +69,7 @@ const TabRoutes = (props) => {
                 options={{
                     tabBarIcon: ({ focused }) => {
                         return (
-                                <Image source={imagePath.createIcon}style={styles.icon} />
+                                <Image source={imagePath.createIcon}style={[styles.icon,{tintColor:focused? "red":"grey"}]} />
                                 
                         );
                     },
@@ -84,7 +85,7 @@ const TabRoutes = (props) => {
                     tabBarIcon: ({ focused }) => {
                         return (
                            
-                                <Image source={imagePath.notificationIcon} style={styles.icon} />
+                                <Image source={imagePath.notificationIcon} style={[styles.icon,{tintColor:focused? "red":"grey"}]} />
                                 
                         );
                     },
@@ -100,7 +101,7 @@ const TabRoutes = (props) => {
                     tabBarIcon: ({ focused }) => {
                         return (
                   
-                                <Image source={imagePath.profileIcon}style={styles.icon} />
+                                <Image source={imagePath.profileIcon}style={[styles.icon,{tintColor:focused? "red":"grey"}]} />
                                
                         );
                     },
@@ -121,6 +122,7 @@ const styles = StyleSheet.create({
     icon:{
         width:30,
         height:30,
+      
         
         
     }
