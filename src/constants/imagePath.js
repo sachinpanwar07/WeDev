@@ -4,7 +4,7 @@ export default{
     notificationIcon:require('../assets/images/ic_notification.png'),
     searchIcon:require('../assets/images/ic_search.png'),
     profileIcon:require('../assets/images/ic_profile.png'),
-
+    imgApp:require('../assets/images/ic_appLogo.png')
  
  
 }
