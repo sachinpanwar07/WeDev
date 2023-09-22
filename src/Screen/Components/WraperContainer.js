@@ -4,12 +4,12 @@ import color from '../../styles/color'
 
 const WraperContainer = ({
     style={},
-    Children
+    children
 }) => {
   return (
     <View style={{...styles.container,...style}}>
     <SafeAreaView>
-     {Children}
+     {children}
     </SafeAreaView>
     </View>
   )
@@ -19,9 +19,8 @@ export default WraperContainer
 
 const styles = StyleSheet.create({
     container:{
+      flex:1,
+        backgroundColor:color.blackColor,
       
-        backgroundColor:color.whiteColor,
-        justifyContent:'center',
-        alignItems:'center'
     }
 })

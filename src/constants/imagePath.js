@@ -4,7 +4,10 @@ export default{
     notificationIcon:require('../assets/images/ic_notification.png'),
     searchIcon:require('../assets/images/ic_search.png'),
     profileIcon:require('../assets/images/ic_profile.png'),
-    imgApp:require('../assets/images/ic_appLogo.png')
- 
+    imgApp:require('../assets/images/ic_appLogo.png'),
+    
+     ic_google:require('../assets/images/ic_google.png'),
+    ic_faceBook:require('../assets/images/ic_facebook.png'),
+
  
 }
