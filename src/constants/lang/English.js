@@ -10,6 +10,25 @@ export default{
     OR:"or",
     LOGIN_WITH_GOOGLE:"Log In With Google",
     LOGIN_WITH_FACEBOOK:'Log In With FaceBook',
-    NEW_HERE:"New here",
-    SIGN_UP:"Sign UP"
+    NEW_HERE:"New here ?",
+    SIGN_UP:"Sign UP",
+    WelCome_BACk:'Welcome Back',
+    WE_ARE_HAPPY_TO_SEE:'We Are Happy to see . You can login to continue',
+    EMAIL:"Email",
+    PASSWORD:"Pasword",
+    
+    SHOW:"Show",
+    HIDE:"Hide",
+    FORGOT_PASS:"Forgot Password",
+    USE_OPT:"Use OTP",
+    LOGIN:"Login",
+    CREATE_NEW_ACCOUNT:"Create new account",
+    CREATE_AN_ACCOUNT_SO_YOU_CAN_CONTINUE:"Create an account so that you can continue",
+    USERNAME:"User name",
+    FULL_NAME:"Full name",
+    MOBILE_NUMBER:"Mobile number",
+    CONFIRM_PASS:"Confirm Password"
+    
+
+
 }

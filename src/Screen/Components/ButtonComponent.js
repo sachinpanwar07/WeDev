@@ -1,6 +1,7 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import color from '../../styles/color'
+import { moderateScale, textScale } from '../../styles/responsive'
 
 const ButtonComponent = ({onPress=()=>{},
 text='',
@@ -25,20 +26,21 @@ const styles = StyleSheet.create({
 container:{
     backgroundColor:color
     .redColor,
-    height:42,
+    height:moderateScale(52),
     justifyContent:'space-between',
     alignItems:"center",
-   borderRadius:10,
+   borderRadius:moderateScale(10),
    flexDirection:'row',
-   paddingHorizontal:15
+   paddingHorizontal:moderateScale(15)
   
 },
 textStyle:{
-    fontSize:16,
+    fontSize:textScale(16),
     color:'white',
     fontWeight:'700',
     textAlign:'center',
-    padding:10,
+    
+    
    
 } 
 })

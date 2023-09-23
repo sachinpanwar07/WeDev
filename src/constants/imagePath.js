@@ -8,6 +8,6 @@ export default{
     
      ic_google:require('../assets/images/ic_google.png'),
     ic_faceBook:require('../assets/images/ic_facebook.png'),
-
+    ic_back:require('../assets/images/icback.png')
  
 }

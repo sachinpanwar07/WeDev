@@ -8,7 +8,7 @@ const WraperContainer = ({
 }) => {
   return (
     <View style={{...styles.container,...style}}>
-    <SafeAreaView>
+    <SafeAreaView style={{flex:1}}>
      {children}
     </SafeAreaView>
     </View>

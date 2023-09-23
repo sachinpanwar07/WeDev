@@ -9,6 +9,8 @@ import imagePath from '../../constants/imagePath';
 import strings from '../../constants/lang';
 import ButtonComponent from '../Components/ButtonComponent';
 import color from '../../styles/color';
+import {moderateScale} from '../../styles/responsive';
+import {textScale} from '../../styles/responsive';
 imagePath;
 const {dispatch} = store;
 
@@ -26,13 +28,20 @@ const InitialScreen = ({navigation}) => {
   };
   return (
     <WraperContainer>
-      <View
-        style={{padding: 16, justifyContent: 'center', alignItems: 'center'}}>
-        <Image source={imagePath.imgApp} style={styles.imagelogo} />
+      <View style={{padding: moderateScale(12), alignItems: 'center', flex: 1}}>
+        <View style={{flex: 0.3, justifyContent: 'flex-start'}}>
+          <Image source={imagePath.imgApp} style={styles.imagelogo} />
+        </View>
 
-        <View>
-          <Text style={{fontSize: 15, fontWeight: '700', textAlign: 'center'}}>
-            {strings.BY_CLICKING_LOG_IN}{' '}
+        <View style={{flex: 0.7, justifyContent: 'flex-end'}}>
+          <Text
+            style={{
+              ...styles.textStyle,
+
+              marginVertical: moderateScale(42),
+            }}>
+            {strings.BY_CLICKING_LOG_IN}
+
             <Text
               onPress={() => {
                 onPressTerm(1);
@@ -40,28 +49,56 @@ const InitialScreen = ({navigation}) => {
               {strings.TERMS}
             </Text>
             <Text>
-              {strings.LEARN_HOW_WE_PROCESS}{' '}
-              <Text onPress={() => onPressTerm(1)}>
+              {strings.LEARN_HOW_WE_PROCESS}
+              <Text onPress={() => onPressTerm(1)} style={{}}>
                 {strings.PRIVACY_POLICY}
               </Text>
             </Text>
           </Text>
-          <ButtonComponent text={strings.LOG_IN_WITH_PHONE} />
-          <Text style={{...styles.textStyle, marginVertical: 16}}>
+
+          <ButtonComponent text={strings.LOG_IN_WITH_PHONE}
+          onPress={()=>navigation.navigate(NavigationString.LOGIN)}
+          />
+          <Text
+            style={{
+              ...styles.textStyle,
+              marginVertical: moderateScale(12),
+              textAlign: 'center',
+              color: color.whiteColor,
+            }}>
             {strings.OR}
           </Text>
           <ButtonComponent
             text={strings.LOGIN_WITH_GOOGLE}
             textStyle={{color: color.blackColor}}
-            style={{backgroundColor: color.whiteColor, marginVertical: 16}}
-             leftimg={imagePath.ic_google}
+            style={{
+              backgroundColor: color.whiteColor,
+              marginVertical: moderateScale(16),
+            }}
+            leftimg={imagePath.ic_google}
           />
           <ButtonComponent
             text={strings.LOGIN_WITH_FACEBOOK}
             textStyle={{color: color.blackColor}}
-            style={{backgroundColor: color.whiteColor, marginVertical: 16}}
-            leftimg={imagePath.ic_faceBook }
+            style={{
+              backgroundColor: color.whiteColor,
+              marginVertical: moderateScale(16),
+            }}
+            leftimg={imagePath.ic_faceBook}
           />
+          <Text
+            style={{
+              ...styles.textStyle,
+              color: color.whiteColor,
+              textAlign: 'center',
+            }}>
+            {strings.NEW_HERE}{' '}
+            <Text style={{...styles.textStyle, color: color.blueColor}}
+             onPress={()=>navigation.navigate(NavigationString.SIGNUP_SCREEN)}
+            >
+              {strings.SIGN_UP}
+            </Text>
+          </Text>
         </View>
       </View>
     </WraperContainer>
@@ -69,19 +106,15 @@ const InitialScreen = ({navigation}) => {
 };
 const styles = StyleSheet.create({
   imagelogo: {
-    width: 200,
-    height: 200,
-    borderRadius: 100,
-    borderWidth: 1,
-    backgroundColor: 'blue',
+    width: moderateScale(150),
+    height: moderateScale(150),
+    borderRadius: moderateScale(150 / 2),
   },
   textStyle: {
-    fontSize: 16,
+    fontSize: textScale(16),
     color: 'white',
     fontWeight: '700',
     textAlign: 'center',
-    padding: 10,
-    justifyContent: 'space-between',
   },
 });
 export default InitialScreen;
