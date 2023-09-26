@@ -7,10 +7,11 @@ const WraperContainer = ({
     style={},
     children
 }) => {
-  const isDarkTheme=useSelector(state=>state?.AppSetting?.isDark || true)
+  const isDarkTheme=useSelector(state=>state?.AppSetting?.isDark)
+  console.warn(isDarkTheme)
   return (
     <View style={{...styles.container,...style,
-      backgroundColor:true? color.themeColor:color.whiteColor
+      backgroundColor:isDarkTheme? color.themeColor:color.whiteColor
   
     }}>
     <SafeAreaView style={{flex:1}}>

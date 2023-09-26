@@ -35,6 +35,7 @@ export default TextInputCompo
 const styles = StyleSheet.create({
   inputStyle:{
     height:moderateScale(52),
+   
     borderRadius:moderateScale(10),
     flexDirection:"row",
     justifyContent:'space-between',

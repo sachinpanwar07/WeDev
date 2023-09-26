@@ -4,9 +4,7 @@ const appSettingSlice = createSlice({
     name: 'appSetting',
     initialState: {
       lang: 'en',
-      isDark:true,
-
-
+      isDark:false,
     },
     reducers: {
       changeLang: (state, action) => {
@@ -21,7 +19,7 @@ const appSettingSlice = createSlice({
     
   })
   
-  export const { changeLang,changeTheme } = authSlice.actions
+  export const { changeLang,changeTheme } = appSettingSlice.actions
   
   export default appSettingSlice.reducer
 

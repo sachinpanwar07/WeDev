@@ -1,22 +1,15 @@
-import { FORGOT_PASSWORD, LOGIN_API, SIGNUP_API } from '../../config/urls';
-import { changeLang } from '../reducers/Appsetting';
+import {FORGOT_PASSWORD, LOGIN_API, SIGNUP_API} from '../../config/urls';
+import {changeLang, changeTheme} from '../reducers/Appsetting';
 
-import { saveUserData } from '../reducers/auth';
+import {saveUserData} from '../reducers/auth';
 import store from '../store';
 import types from '../types';
-const { dispatch } = store;
+const {dispatch} = store;
 
-
-
-export const changeLanguage = (data) => {
-  dispatch(changeLang(data)); 
- 
+export const changeLanguage = data => {
+  dispatch(changeLang(data));
 };
 
-
-
-export const changeTheme = (data) => {
-    dispatch(changeTheme(data)); 
-   
-  };
-  
+export const changeTheme = data => {
+  dispatch(changeTheme(data));
+};

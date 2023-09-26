@@ -7,6 +7,7 @@ import { moderateScaleVertical, textScale } from '../../styles/responsive'
 import color from '../../styles/color'
 import ButtonComponent from '../Components/ButtonComponent'
 import HeaderCompo from '../Components/HeaderCompo'
+import TextCompo from '../Components/TextCompo'
 const Signup = () => {
   const [username,setUsername]=useState('');
   const [fullname,setFullname]=useState('');
@@ -19,8 +20,14 @@ const Signup = () => {
     <HeaderCompo/>
    <View style={{flex:1 ,}}>
     <View style={{flex:0.8,}}>
-    <Text style={styles.headerStyle}>{strings.CREATE_NEW_ACCOUNT}</Text>
-     <Text style={styles.decStyle}>{strings.CREATE_AN_ACCOUNT_SO_YOU_CAN_CONTINUE}</Text>
+  
+    <TextCompo text={strings.CREATE_NEW_ACCOUNT}
+    style={styles.headerStyle}
+    />
+    
+     <TextCompo text={strings.CREATE_AN_ACCOUNT_SO_YOU_CAN_CONTINUE}
+    style={styles.decStyle}
+    />
      <TextInputCompo
      value={username}
      placeholder={strings.USERNAME}
@@ -60,10 +67,7 @@ const Signup = () => {
     
    <View>
     <Text/>
-    <Text style={{...styles.decStyle,
-    alignSelf:'flex-end',
-    color:color.blueColor
-    }} >{strings.FORGOT_PASS}</Text>
+
    </View>
    </View>
    <View style={{flex:0.2,justifyContent:'flex-end'}}>
@@ -84,7 +88,7 @@ const styles=StyleSheet.create({
     marginTop:moderateScaleVertical(12)
   },
   decStyle:{
-    fontSize:textScale(12),
+    fontSize:textScale(14),
     color:color.whiteColorOpacity70,
     marginTop:moderateScaleVertical(8),
     marginBottom:moderateScaleVertical(52)

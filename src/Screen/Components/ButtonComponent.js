@@ -2,6 +2,8 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import color from '../../styles/color'
 import { moderateScale, textScale } from '../../styles/responsive'
+import { useSelector } from 'react-redux'
+
 
 const ButtonComponent = ({onPress=()=>{},
 text='',
@@ -9,6 +11,7 @@ style={},
 textStyle={},
 leftimg=null
 }) => {
+  
   return (
    <TouchableOpacity style={{...styles.container,...style}}
    onPress={onPress}
@@ -31,7 +34,7 @@ container:{
     alignItems:"center",
    borderRadius:moderateScale(10),
    flexDirection:'row',
-   paddingHorizontal:moderateScale(15)
+   paddingHorizontal:moderateScale(12)
   
 },
 textStyle:{

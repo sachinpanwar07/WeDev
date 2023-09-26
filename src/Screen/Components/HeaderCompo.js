@@ -3,9 +3,11 @@ import React from 'react';
 import {moderateScale} from '../../styles/responsive';
 import imagePath from '../../constants/imagePath';
 import {useNavigation} from '@react-navigation/native';
-
+import {useSelector} from 'react-redux';
+import color from '../../styles/color';
 const HeaderCompo = ({onPressLeft}) => {
   const navigation = useNavigation();
+  const isDarkTheme = useSelector(state => state?.AppSetting?.isDark);
   return (
     <View style={styles.container}>
       <TouchableOpacity
@@ -13,9 +15,9 @@ const HeaderCompo = ({onPressLeft}) => {
         <Image
           source={imagePath.ic_back}
           style={{
-            width: moderateScale(20),
+            width: moderateScale(25),
             height: moderateScale(20),
-         
+            tintColor: isDarkTheme ? color.whiteColor : color.blackColor,
           }}
         />
       </TouchableOpacity>

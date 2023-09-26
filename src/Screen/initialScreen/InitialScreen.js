@@ -11,6 +11,8 @@ import ButtonComponent from '../Components/ButtonComponent';
 import color from '../../styles/color';
 import {moderateScale} from '../../styles/responsive';
 import {textScale} from '../../styles/responsive';
+import TextCompo from '../Components/TextCompo';
+import { useSelector } from 'react-redux';
 imagePath;
 const {dispatch} = store;
 
@@ -26,21 +28,23 @@ const InitialScreen = ({navigation}) => {
       alert('Privacy');
     }
   };
+  const isDarkTheme = useSelector(state => state?.AppSetting?.isDark);
   return (
     <WraperContainer>
       <View style={{padding: moderateScale(12), alignItems: 'center', flex: 1}}>
         <View style={{flex: 0.3, justifyContent: 'flex-start'}}>
-          <Image source={imagePath.imgApp} style={styles.imagelogo} />
+        <Image source={imagePath.imgApp} style={styles.imagelogo} />
         </View>
 
         <View style={{flex: 0.7, justifyContent: 'flex-end'}}>
-          <Text
+          <TextCompo
+          text={strings.BY_CLICKING_LOG_IN}
             style={{
-              ...styles.textStyle,
+             
 
               marginVertical: moderateScale(42),
             }}>
-            {strings.BY_CLICKING_LOG_IN}
+            
 
             <Text
               onPress={() => {
@@ -54,12 +58,12 @@ const InitialScreen = ({navigation}) => {
                 {strings.PRIVACY_POLICY}
               </Text>
             </Text>
-          </Text>
+          </TextCompo>
 
           <ButtonComponent text={strings.LOG_IN_WITH_PHONE}
           onPress={()=>navigation.navigate(NavigationString.LOGIN)}
           />
-          <Text
+          {/* <Text
             style={{
               ...styles.textStyle,
               marginVertical: moderateScale(12),
@@ -67,12 +71,13 @@ const InitialScreen = ({navigation}) => {
               color: color.whiteColor,
             }}>
             {strings.OR}
-          </Text>
+          </Text> */}
+          <TextCompo text={strings.OR} style={{textAlign:'center',marginVertical:moderateScale(12)}}/>
           <ButtonComponent
             text={strings.LOGIN_WITH_GOOGLE}
             textStyle={{color: color.blackColor}}
             style={{
-              backgroundColor: color.whiteColor,
+              backgroundColor: isDarkTheme? color.whiteColor:color.gray4,
               marginVertical: moderateScale(16),
             }}
             leftimg={imagePath.ic_google}
@@ -81,24 +86,24 @@ const InitialScreen = ({navigation}) => {
             text={strings.LOGIN_WITH_FACEBOOK}
             textStyle={{color: color.blackColor}}
             style={{
-              backgroundColor: color.whiteColor,
+              backgroundColor: isDarkTheme? color.whiteColor:color.gray4,
               marginVertical: moderateScale(16),
             }}
             leftimg={imagePath.ic_faceBook}
           />
-          <Text
+          <TextCompo
             style={{
               ...styles.textStyle,
               color: color.whiteColor,
               textAlign: 'center',
             }}>
-            {strings.NEW_HERE}{' '}
+            {strings.NEW_HERE}
             <Text style={{...styles.textStyle, color: color.blueColor}}
              onPress={()=>navigation.navigate(NavigationString.SIGNUP_SCREEN)}
             >
               {strings.SIGN_UP}
             </Text>
-          </Text>
+          </TextCompo>
         </View>
       </View>
     </WraperContainer>
